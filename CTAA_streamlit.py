@@ -83,8 +83,7 @@ def gerar_excel(tabela):
 st.set_page_config(
     page_title="Cálculo de CTAA",
     page_icon="📄",
-    layout="wide"
-)
+    layout="wide")
 st.title("📄 Cálculo de Tempo — CTAA")
 st.caption("Certidão de Tempo de Aluno-Aprendiz")
 st.divider()
@@ -153,20 +152,15 @@ if st.button("Calcular CTAA", type="primary", use_container_width=True):
     )
     metrica1, metrica2 = st.columns(2)
     with metrica1:
-        st.metric("Tempo líquido total", f"{total_liquido:,}".replace(",", ".") + " dias")
+        st.metric("Tempo líquido total", f"{total_liquido:,}".replace(",", ".") ({total_extenso.capitalize()})+" dias")
     with metrica2:
         st.metric("Período total", periodo_total)
     st.success(
-        f"**Total por extenso:** {total_extenso.capitalize()} dias."
+        f"**Total por extenso:**  dias."
     )
-    excel = gerar_excel(tabela)
-    st.download_button(
-        label="📥 Baixar planilha Excel",
-        data=excel,
-        file_name="calculo_tempo_CTAA.xlsx",
-        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-        use_container_width=True
-    )
+    # excel = gerar_excel(tabela)
+    # st.download_button(label="📥 Baixar planilha Excel", data=excel,file_name="calculo_tempo_CTAA.xlsx",
+    #     mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", use_container_width=True)
 else:
     st.divider()
     st.info("Informe as faltas de cada ano e clique em **Calcular CTAA**.")
