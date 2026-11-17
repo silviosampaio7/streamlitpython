@@ -152,12 +152,9 @@ if st.button("Calcular CTAA", type="primary", use_container_width=True):
     )
     metrica1, metrica2 = st.columns(2)
     with metrica1:
-        st.metric("Tempo líquido total", f"{total_liquido:,}".replace(",", ".") ({total_extenso.capitalize()})+" dias")
+         st.metric("Tempo líquido total",f" {total_liquido:,}".replace(",", ".")+f"({total_extenso.capitalize()}) dias")                                   
     with metrica2:
         st.metric("Período total", periodo_total)
-    st.success(
-        f"**Total por extenso:**  dias."
-    )
     # excel = gerar_excel(tabela)
     # st.download_button(label="📥 Baixar planilha Excel", data=excel,file_name="calculo_tempo_CTAA.xlsx",
     #     mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", use_container_width=True)
