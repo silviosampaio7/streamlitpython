@@ -94,7 +94,7 @@ with col1:
         "Informe o primeiro ano",
         min_value=1900,
         max_value=2100,
-        value=1998,
+        value=1990,
         step=1
     )
 with col2:
